@@ -5,7 +5,7 @@ import random
 #variaveis
 
 saldo = 1500
-limite = 1000
+limite = 500
 extrato = ''
 numero_saques = 0
 limite_saques = 3
@@ -66,13 +66,13 @@ class cliente:
          self.endereco = endereco
          self.cpf = cpf
 
-class contascorrente:
-     def __init__(self, agencia, numero_conta, usuario, senha, cpf):
+class contascorrente(cliente):
+     def __init__(self, agencia, numero_conta, usuario, senha, ):
         self.agencia = agencia
         self.numero_conta = numero_conta
         self.login = usuario
         self.senha = senha
-        self.cpf = cpf
+
 
     #funções
 
@@ -94,15 +94,6 @@ def criar_usuario():
                 conta_corrente()
         else:
              login()
-    
-#    else:
-#        cpf = input('Digite seu CPF: ')
-#        cliente_existente = next((c for c in clientes if c.cpf == cpf), None)
-#        if cliente_existente:
-#            menu(saldo, numero_saques, extrato, limite_saques, limite)
-#        else:
-#            print("Cliente não encontrado!")
-#            return criar_usuario()
 
 def conta_corrente():
     agencia = "0001"
